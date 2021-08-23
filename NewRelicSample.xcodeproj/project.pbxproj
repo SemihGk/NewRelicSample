@@ -14,6 +14,10 @@
 		284221B426D42AEA00D90848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284221B326D42AEA00D90848 /* Assets.xcassets */; };
 		284221B726D42AEA00D90848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284221B526D42AEA00D90848 /* LaunchScreen.storyboard */; };
 		284221BA26D42AEA00D90848 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 284221B926D42AEA00D90848 /* main.m */; };
+		284221C226D42B0600D90848 /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284221C026D42AFE00D90848 /* NewRelicAgent.framework */; };
+		284221CD26D4304500D90848 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 284221CC26D4304500D90848 /* libz.tbd */; };
+		284221CF26D4309F00D90848 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284221CE26D4309F00D90848 /* SystemConfiguration.framework */; };
+		284221D126D4315000D90848 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284221D026D4315000D90848 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,13 @@
 		284221B626D42AEA00D90848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		284221B826D42AEA00D90848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		284221B926D42AEA00D90848 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		284221C026D42AFE00D90848 /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
+		284221C626D42D2C00D90848 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		284221C726D42D2C00D90848 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		284221C826D42D2C00D90848 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		284221CC26D4304500D90848 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		284221CE26D4309F00D90848 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		284221D026D4315000D90848 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284221D126D4315000D90848 /* CoreTelephony.framework in Frameworks */,
+				284221CF26D4309F00D90848 /* SystemConfiguration.framework in Frameworks */,
+				284221CD26D4304500D90848 /* libz.tbd in Frameworks */,
+				284221C226D42B0600D90848 /* NewRelicAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +60,10 @@
 		2842219B26D42AE700D90848 = {
 			isa = PBXGroup;
 			children = (
+				284221C026D42AFE00D90848 /* NewRelicAgent.framework */,
 				284221A626D42AE700D90848 /* NewRelicSample */,
 				284221A526D42AE700D90848 /* Products */,
+				284221C526D42D2B00D90848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +91,19 @@
 				284221B926D42AEA00D90848 /* main.m */,
 			);
 			path = NewRelicSample;
+			sourceTree = "<group>";
+		};
+		284221C526D42D2B00D90848 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				284221D026D4315000D90848 /* CoreTelephony.framework */,
+				284221CE26D4309F00D90848 /* SystemConfiguration.framework */,
+				284221CC26D4304500D90848 /* libz.tbd */,
+				284221C726D42D2C00D90848 /* AVFoundation.framework */,
+				284221C626D42D2C00D90848 /* CoreFoundation.framework */,
+				284221C826D42D2C00D90848 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +323,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKVD797JBB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NewRelicSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Obj-c",
+					"-lc++",
+					"-w",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.directv.newrelicsample.NewRelicSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,10 +351,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DKVD797JBB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NewRelicSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Obj-c",
+					"-lc++",
+					"-w",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.directv.newrelicsample.NewRelicSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
